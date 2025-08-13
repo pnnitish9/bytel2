@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auth | Sign In / Sign Up</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <div class="auth-wrapper">
+    <div class="auth-card" id="authCard">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Welcome</h1>
+          <p class="sub">Access your account or create a new one.</p>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Authentication modes">
+        <button class="tab-btn" id="tabSignIn" role="tab" aria-selected="true" aria-controls="panelSignIn">Sign In</button>
+        <button class="tab-btn" id="tabSignUp" role="tab" aria-selected="false" aria-controls="panelSignUp">Sign Up</button>
+      </div>
+
+      <div class="message" id="globalMessage" role="alert" aria-live="polite"></div>
+
+      <div class="panels">
+        <!-- Sign In -->
+        <form id="panelSignIn" class="active" role="tabpanel" aria-labelledby="tabSignIn" novalidate>
+          <div class="field">
+            <label for="inEmail">Email</label>
+            <input id="inEmail" class="input" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <div class="err" id="inEmailErr"></div>
+          </div>
+          <div class="field">
+            <label for="inPassword">Password</label>
+            <input id="inPassword" class="input" type="password" placeholder="Your password" autocomplete="current-password" required minlength="6" />
+            <div class="err" id="inPasswordErr"></div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn">Sign In</button>
+            <div class="switch">No account? <a href="#" class="link" data-switch="signup">Create one</a></div>
+          </div>
+        </form>
+
+        <!-- Sign Up -->
+        <form id="panelSignUp" role="tabpanel" aria-labelledby="tabSignUp" hidden novalidate>
+          <div class="field">
+            <label for="upEmail">Email</label>
+            <input id="upEmail" class="input" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <div class="err" id="upEmailErr"></div>
+          </div>
+          <div class="field">
+            <label for="upPassword">Password</label>
+            <input id="upPassword" class="input" type="password" placeholder="At least 6 characters" autocomplete="new-password" required minlength="6" />
+            <div class="err" id="upPasswordErr"></div>
+          </div>
+          <div class="field">
+            <label for="upConfirm">Confirm Password</label>
+            <input id="upConfirm" class="input" type="password" placeholder="Re-enter your password" autocomplete="new-password" required minlength="6" />
+            <div class="err" id="upConfirmErr"></div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn">Create Account</button>
+            <div class="switch">Already have an account? <a href="#" class="link" data-switch="signin">Sign in</a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
